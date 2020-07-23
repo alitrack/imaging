@@ -41,6 +41,7 @@ func GetBBox(src image.Image) (x1, y1, x2, y2 int) {
 		}
 	}(&wg)
 
+	c = src.At(width-1, height-1)
 	go func(wg *sync.WaitGroup) {
 		defer wg.Done()
 		for x2 = width - 1; x2 >= 0; x2-- {
