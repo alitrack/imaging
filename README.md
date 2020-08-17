@@ -8,6 +8,21 @@ return the bounding box as a 4-tuple defining the left, upper, right, and lower 
 
 If the image is completely empty, this method returns (0,0,0,0).
 
+other solution,
+* GostScript
+```
+$ gs -sDevice=bbox tempCmykPdfFile.pdf|grep BoundingBox
+>> return 
+ %%BoundingBox: 13 48 199 100
+```
+
+* Python PIL
+```
+import Image
+im=Image.open("myfile.png")
+print im.getbbox()
+```
+
 ## Installation
 
 ```
